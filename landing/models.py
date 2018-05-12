@@ -11,11 +11,11 @@ class Home(models.Model):
     tagline = models.CharField(max_length=50, blank=True, null=True, verbose_name='Строка 3')
 
     def __str__(self):
-        return str(self.title) + str(self.subtitle) + str(self.tagline)
+        return '%s %s %s' % (self.title, self.subtitle, self.tagline)
 
     class Meta:
-        verbose_name = 'Домашняя сраница'
-        verbose_name_plural = 'Домашние сраницы'
+        verbose_name = 'Home'
+        verbose_name_plural = 'Home'
 
 
 # <-- Second (About me) section -->
@@ -30,11 +30,11 @@ class AboutMe(models.Model):
     text_second = models.CharField(max_length=250, blank=True, verbose_name='Текс левого блока')
 
     def __str__(self):
-        return str(self.name) + str(self.text) + str(self.name_second) + str(self.text_second)
+        return '%s %s %s %s' % (self.name, self.text, self.name_second, self.text_second)
 
     class Meta:
-        verbose_name = 'Обо мне'
-        verbose_name_plural = 'Обо мне'
+        verbose_name = 'About Me'
+        verbose_name_plural = 'About Me'
 
 # <-- Third (About the site) section -->
 
@@ -52,12 +52,13 @@ class AboutSite(models.Model):
     text_four = models.CharField(max_length=200, blank=True, verbose_name='Текст описания')
 
     def __str__(self):
-        return str(self.title)+str(self.text)+str(self.name_one)+str(self.text_one)+str(self.name_two)+str(
-            self.text_two)+str(self.name_three)+str(self.text_three)+str(self.name_four)+str(self.text_four)
+        return '%s %s %s %s %s %s %s %s %s %s' % (self.title, self.text, self.name_one, self.text_one, self.name_two,
+                                                  self.text_two, self.name_three, self.text_three, self.name_four,
+                                                  self.text_four)
 
     class Meta:
-        verbose_name = 'О сайте'
-        verbose_name_plural = 'О сайте'
+        verbose_name = 'About Site'
+        verbose_name_plural = 'About Site'
 
 # <-- Fourth (Feedback) section -->
 
@@ -68,8 +69,8 @@ class Feedback(models.Model):
     line_three = models.CharField(max_length=100, blank=True, verbose_name='Строка 3')
 
     def __str__(self):
-        return str(self.line_one) + str(self.line_two) + str(self.line_three)
+        return '%s %s %s' % (self.line_one, self.line_two, self.line_three)
 
     class Meta:
-        verbose_name = 'Обратная связь'
-        verbose_name_plural = 'Обратная связь'
+        verbose_name = 'Feedback'
+        verbose_name_plural = 'Feedback'
